@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Negative Numbers: A Journey Through History</title>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--cn-bg:#dfe2d0;--cn-ink:#1a1a1a;--cn-acc:#b3261e;--in-bg:#ebc678;--in-ink:#3a1f0a;--in-acc:#8a2a0a;--is-bg:#1c3d73;--is-ink:#f3e7c4;--is-acc:#e6b84a;--eu-bg:#e3d2a8;--eu-ink:#2b1d12;--eu-acc:#7a1f22;--barbg:#241a10;--barink:#f1e4c0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--cn-bg:#232a26;--cn-ink:#e8e6da;--cn-acc:#e5483b;--in-bg:#4a3314;--in-ink:#f5dfb0;--in-acc:#ee9b5a;--is-bg:#0f2347;--eu-bg:#2c2318;--eu-ink:#eadcb8;--eu-acc:#d9705f;color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--barbg);color:var(--barink);font-family:"IM Fell English",Georgia,serif;overflow:hidden}
+#stage{position:relative;height:calc(100% - 156px)}
+.cn{--bg:var(--cn-bg);--ink:var(--cn-ink);--acc:var(--cn-acc)}
+.in{--bg:var(--in-bg);--ink:var(--in-ink);--acc:var(--in-acc)}
+.is{--bg:var(--is-bg);--ink:var(--is-ink);--acc:var(--is-acc)}
+.eu{--bg:var(--eu-bg);--ink:var(--eu-ink);--acc:var(--eu-acc)}
+.s{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:26px 28px;text-align:center;opacity:0;pointer-events:none;transition:opacity .8s;color:var(--ink);background:radial-gradient(ellipse at 30% 20%,rgba(255,255,255,.14),transparent 60%),radial-gradient(ellipse at 80% 90%,rgba(0,0,0,.18),transparent 55%),var(--bg)}
+.s::before{content:"";position:absolute;inset:10px;border:4px double var(--acc);opacity:.7;pointer-events:none}
+.s.on{opacity:1}
+h2{font-size:clamp(26px,5vw,46px);margin:0;font-weight:400;line-height:1.15;max-width:18em}
+.sub{font-style:italic;font-size:clamp(15px,2.5vw,21px);margin:0;max-width:34em;opacity:.9}
+.pop{opacity:0}
+.on .pop{animation:in .9s forwards;animation-delay:calc(var(--i,0)*.6s)}
+@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.row{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap}
+.acc{color:var(--acc)}
+.big{font-size:clamp(44px,10vw,88px);color:var(--acc);line-height:1}
+.line{display:flex;justify-content:space-between;gap:30px;width:min(80vw,420px);font-size:clamp(22px,4vw,32px);border-bottom:1px dashed var(--ink)}
+.rod{width:10px;height:74px;border-radius:5px;background:var(--acc)}
+.rod.k{background:var(--ink)}
+.on .rod.x{animation:fade 1s 4s forwards}
+@keyframes fade{to{opacity:.08;transform:scale(.6)}}
+.seal{display:inline-block;background:var(--acc);color:var(--bg);padding:4px 10px;border-radius:5px;font-size:clamp(20px,3.6vw,30px);transform:rotate(-4deg)}
+.card{background:rgba(255,255,255,.22);border:1px solid var(--acc);border-radius:6px;padding:10px 20px;font-size:clamp(17px,3vw,26px)}
+.card.hot{border-width:3px}
+.tl{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.tl div{border:1px solid var(--acc);border-radius:6px;padding:8px 12px;min-width:104px;font-size:clamp(13px,2vw,17px)}
+.tl b{display:block;font-weight:400;font-size:clamp(17px,2.8vw,24px);color:var(--acc)}
+svg{width:min(92vw,720px);overflow:visible}
+.mk{fill:var(--acc)}
+.on .mk{animation:walk 4s 4s forwards ease-in-out}
+@keyframes walk{to{transform:translateX(-400px)}}
+.rt{stroke-dasharray:1000;stroke-dashoffset:1000}
+.on .rt{animation:draw 7s 1s forwards linear}
+@keyframes draw{to{stroke-dashoffset:0}}
+.cap{position:fixed;left:0;right:0;bottom:calc(52px + env(safe-area-inset-bottom,0px));height:104px;padding:6px 22px;text-align:center;font-style:italic;font-size:clamp(13px,2vw,16px);overflow-y:auto;background:var(--barbg);color:var(--barink)}
+.bar{position:fixed;left:0;right:0;bottom:0;padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px));display:flex;gap:12px;align-items:center;justify-content:center;background:var(--barbg)}
+button{font:inherit;color:var(--barink);background:transparent;border:1px solid var(--barink);border-radius:999px;padding:6px 18px;cursor:pointer;font-size:18px}
+button:focus-visible{outline:3px solid #e6b84a}
+.dots{display:flex;gap:6px}.dots i{width:8px;height:8px;border-radius:50%;background:#6b5a40}.dots i.on{background:#e6b84a}
+#start,#end{position:fixed;inset:0;z-index:9;background:var(--eu-bg);color:var(--eu-ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;text-align:center;padding:20px}
+#go{background:var(--eu-acc);color:#f6ecd2;border-color:var(--eu-acc);font-size:20px;padding:10px 30px}
+@media (prefers-reduced-motion:reduce){.on .pop,.on .rod.x,.on .mk,.on .rt{animation-duration:.01s;animation-delay:0s}}
+#end{display:none;z-index:8}.ch{display:block;margin:6px auto;width:min(88vw,460px);background:var(--eu-acc);color:#f6ecd2;border-color:var(--eu-acc);font-size:18px;border-radius:14px}#start,#end{overflow-y:auto}</style>
+</head>
+<body>
+<div id="start" class="eu">
+  <h2>The Number That Wasn’t Supposed to Exist</h2>
+  <p class="sub">A journey from China to India to Europe, told in four chapters. Turn your sound on and choose a chapter.</p>
+  <div id="menu"></div>
+</div>
+<div id="end" class="eu"></div>
+<div id="stage">
+  <section class="s eu">
+    <h2 class="pop">Four stops on a long road</h2>
+    <svg viewBox="0 0 640 150" aria-hidden="true">
+      <path class="rt" d="M70 105 Q150 15 230 50 T410 100 T570 50" fill="none" stroke="var(--acc)" stroke-width="3" stroke-dasharray="1000"/>
+      <g fill="var(--acc)"><circle cx="70" cy="105" r="9"/><circle cx="230" cy="50" r="9"/><circle cx="410" cy="100" r="9"/><circle cx="570" cy="50" r="9"/></g>
+      <g fill="var(--ink)" font-size="17" text-anchor="middle"><text x="70" y="136">China</text><text x="230" y="30">India</text><text x="410" y="132">Islamic world</text><text x="570" y="30">Europe</text></g>
+    </svg>
+    <p class="sub pop" style="--i:2">A tool, then names and rules, then a bridge, then acceptance.</p>
+  </section>
+  <section class="s eu">
+    <h2 class="pop">What if you owe more than you have?</h2>
+    <div class="line pop" style="--i:1"><span>Earned</span><span>5</span></div>
+    <div class="line pop" style="--i:2"><span>Owed</span><span class="acc">8</span></div>
+    <div class="big pop" style="--i:3">5 − 8 = ?</div>
+    <p class="sub pop" style="--i:4">Early arithmetic had no answer.</p>
+  </section>
+  <section class="s cn">
+    <h2 class="pop">China: the counting board</h2>
+    <p class="sub pop" style="--i:1">The Nine Chapters, Chapter 8. Red rods for gains, black for debts.</p>
+    <div class="row pop" style="--i:2" id="reds"></div>
+    <div class="row pop" style="--i:3" id="blks"></div>
+    <div class="pop" style="--i:8"><span class="seal">正負</span> <span class="sub">Opposites cancel. Three red remain.</span></div>
+  </section>
+  <section class="s in">
+    <h2 class="pop">India: debts and fortunes</h2>
+    <p class="sub pop" style="--i:1">Brahmagupta, AD 628. <b>धन</b> dhana, fortune. <b>ऋण</b> rina, debt.</p>
+    <div class="card pop" style="--i:2">fortune + fortune = fortune</div>
+    <div class="card pop" style="--i:3">debt + debt = debt</div>
+    <div class="card pop" style="--i:4">fortune × debt = debt</div>
+    <div class="card hot pop" style="--i:5">debt × debt = fortune <span class="acc">?!</span></div>
+  </section>
+  <section class="s in">
+    <h2 class="pop">Why debt × debt is a fortune</h2>
+    <div class="card pop" style="--i:1">3 × (−2) = −6</div>
+    <div class="card pop" style="--i:2">2 × (−2) = −4</div>
+    <div class="card pop" style="--i:3">1 × (−2) = −2</div>
+    <div class="card pop" style="--i:4">0 × (−2) = 0</div>
+    <div class="card hot pop" style="--i:6">(−1) × (−2) = <span class="acc">2</span></div>
+    <p class="sub pop" style="--i:7">Each step climbs by 2. The pattern must continue.</p>
+  </section>
+  <section class="s is">
+    <h2 class="pop">The bridge: Baghdad and beyond</h2>
+    <svg viewBox="0 0 640 120" aria-hidden="true" class="pop" style="--i:1">
+      <g fill="none" stroke="var(--acc)" stroke-width="2"><rect x="298" y="6" width="44" height="44" transform="rotate(0 320 28)"/><rect x="298" y="6" width="44" height="44" transform="rotate(45 320 28)"/></g>
+      <g fill="var(--ink)" font-size="18" text-anchor="middle"><text x="60" y="100">India</text><text x="230" y="100">Baghdad</text><text x="410" y="100">North Africa, Spain</text><text x="590" y="100">Italy</text></g>
+      <g stroke="var(--acc)" stroke-width="2" fill="none"><path d="M100 94 H190"/><path d="M270 94 H320"/><path d="M500 94 H550"/></g>
+    </svg>
+    <div class="card pop" style="--i:2">al-Khwarizmi, c. 820: <span class="acc">الجبر</span> al-jabr, “restoring”</div>
+    <p class="sub pop" style="--i:3">Indian ideas and numerals travelled west through Arabic scholarship.</p>
+  </section>
+  <section class="s eu">
+    <h2 class="pop">Europe: merchants, then mathematicians</h2>
+    <div class="tl">
+      <div class="pop" style="--i:1">1202 Fibonacci<b>a debt</b></div>
+      <div class="pop" style="--i:2">1494 Pacioli<b>ledgers</b></div>
+      <div class="pop" style="--i:3">1545 Cardano<b>fictitious</b></div>
+      <div class="pop" style="--i:4">1637 Descartes<b>false</b></div>
+      <div class="pop" style="--i:5">1685 Wallis<b>number line</b></div>
+    </div>
+    <svg viewBox="0 0 600 120" class="pop" style="--i:5" id="nl"></svg>
+    <div class="big pop" style="--i:9;font-size:clamp(34px,7vw,60px)">5 − 8 = −3</div>
+  </section>
+  <section class="s eu">
+    <h2 class="pop">Why it took so long</h2>
+    <div class="card pop" style="--i:1">Greek tradition: numbers are lengths</div>
+    <div class="card pop" style="--i:2">Puzzles about ratios, still argued in the 1700s</div>
+    <div class="card pop" style="--i:3">Debt analogies and the number line</div>
+    <div class="card hot pop" style="--i:5">Euler, 1770, and firm foundations in the 1800s</div>
+  </section>
+  <section class="s cn">
+    <h2 class="pop">The road, and the world today</h2>
+    <div class="row pop" style="--i:1;font-size:clamp(30px,6vw,52px)"><span>🎋</span><span>📜</span><span>🕌</span><span>🏛️</span></div>
+    <div class="row pop" style="--i:3;font-size:clamp(44px,10vw,80px)"><span>🌡️</span><span>🏦</span><span>🌊</span><span>🔋</span></div>
+    <p class="sub pop" style="--i:4">Many cultures, over a thousand years. Now you inherit it.</p>
+  </section>
+</div>
+<div class="cap" id="cap" aria-live="polite"></div>
+<div class="bar">
+  <button id="mn" aria-label="Chapter menu">☰</button>
+  <button id="prev" aria-label="Previous slide">⏮</button>
+  <button id="pp" aria-label="Play or pause">⏸</button>
+  <button id="next" aria-label="Next slide">⏭</button>
+  <div class="dots" id="dots"></div>
+</div>
+<script>
+var C=[
+{s:"The problem, and the first stop: China",a:"Try it: use red counters for credit and black counters for debt. Show 7 red and 4 black, and cancel them in pairs. What is left? Then try 3 red and 6 black.",p:[
+[0,"Most people think numbers have always been there, like mountains. Negative numbers are different. They were built slowly, over about fifteen hundred years, by people in different places who were solving different problems."],
+[0,"Our trail has four stops. First is China, where negative numbers were put to work as a calculating tool. Second is India, where they were given names, rules and a meaning. Third is the Islamic world, where scholars gathered Indian mathematics and carried it onward. Fourth is Europe, where, after centuries of doubt, negative numbers were woven into algebra, geometry and everyday bookkeeping."],
+[0,"Why start in China? Because the earliest surviving text that calculates with negative numbers in a systematic way is Chinese. One honest warning before we set off: historians don’t know whether each stop handed the idea to the next. Sometimes it travelled, and sometimes people may have found it independently, because they all faced the same problem. That problem is where our story begins."],
+[1,"Go back to the earliest arithmetic. The Babylonians, Egyptians and Greeks were excellent at calculating, but they only ever subtracted a smaller number from a larger one. Five minus eight was not an answer. It was a mistake, or a question with no meaning."],
+[1,"Yet life kept producing exactly that situation. A merchant earns five coins on Monday and owes a supplier eight on Tuesday. A tax collector has to record a shortfall. A farmer borrows seed before the harvest. Money, grain and land all go up and down, and sometimes you owe more than you have. Mathematics could describe what you have, but it had no language for what you owe. Filling that gap was the real task."],
+[2,"Why did China find an answer first? Part of the reason is how Chinese mathematicians calculated. They worked on a counting board, laying out small bamboo rods in columns, like a physical spreadsheet. Numbers were things you could arrange, move and combine with your hands."],
+[2,"Their most famous book is The Nine Chapters on the Mathematical Art, which was compiled over several centuries around the start of the common era. Chapter eight deals with a method called fangcheng, “rectangular arrangement.” It’s a way of solving several equations at once by laying the numbers in columns and subtracting one column from another, step by step. It’s an early cousin of what students today learn as elimination."],
+[2,"Here is the catch. While subtracting columns, you sometimes have to take a larger number from a smaller one. A rod calculator can’t just stop and declare “impossible,” because the method must continue. So the Chinese needed a rule, and they chose a visual one: use rods of two colours. In the usual description, red rods stand for positive amounts and black rods for negative ones. Later practice sometimes reversed the colours, and written numerals eventually marked a negative with a slanted stroke through the last digit."],
+[2,"The book gives rules for combining them, which it calls the rules for “positive and negative.” When red meets black, they cancel. Eight red and five black leave three red. In the third century, a mathematician named Liu Hui wrote a commentary explaining the idea: positive and negative are opposites, like gain and loss, so if you name one, you must name the other."],
+[2,"Notice what this was. The Chinese used negative numbers as a tool inside a method. Mostly they did not treat a negative as a final answer worth a philosophy, and they didn’t explain what such a number really was. But the tool worked, and that was enough to start the story."]]},
+{s:"The second stop: India",a:"Try it: write 3 × (−4), 2 × (−4), 1 × (−4) and 0 × (−4), then continue the pattern down to (−2) × (−4). What do you notice?",p:[
+[3,"Now travel west and south to India. There, mathematicians were also meeting debts, and they marked them in their own way. In the Bakhshali manuscript, an old birch-bark text found in what is now Pakistan, a small cross written after a number marks it as negative. Its exact age is still debated."],
+[3,"But the great step came in the year 628. Brahmagupta, an astronomer working in central India, wrote a book called the Brahmasphutasiddhanta. It was mainly about astronomy, but it included chapters on arithmetic and algebra, written in Sanskrit verse. And it did something new: it treated debts and fortunes as numbers in their own right, with Sanskrit names, rina for a debt and dhana for a fortune, and with full rules."],
+[3,"A fortune plus a fortune is a fortune. A debt plus a debt is a debt. A fortune plus a debt is the difference between them. Then he set out the rules for multiplication: a debt times a fortune is a debt, and, surprisingly, a debt times a debt is a fortune. He also wrote rules for zero, treating it as a number too, though his rule for dividing by zero was not correct."],
+[3,"So what did India add that China had not? Names, rules in general form, and the confidence to treat these numbers as numbers, not just as bookkeeping tricks. Even so, Indian scholars were cautious. Centuries later, Bhaskara, a twelfth-century mathematician, is reported to have remarked that a negative answer to a problem should not be accepted, because people do not approve of it."],
+[3,"Did India learn this from China? Nobody knows for sure. Buddhist pilgrims and traders did travel between the two lands, so contact was possible. But no one has proved that the idea was passed along. It may well have been invented twice, by two societies facing the same debts."],
+[4,"Let’s reason it out like a mathematician, by spotting a pattern."],
+[4,"Three times negative two is negative six. Two times negative two is negative four. One times negative two is negative two. Zero times negative two is zero. Each time the first number drops by one, the answer goes up by two. So the next answer must be two. Negative one times negative two is positive two."],
+[4,"There’s also a story version. If someone takes away a debt of two coins from you, you are two coins better off. Removing a debt is a gain. Brahmagupta’s strange rule wasn’t a trick. It was what keeps the pattern unbroken."]]},
+{s:"The bridge and Europe",a:"Try it: use a number line to find 2 − 7, −3 + 5 and −2 − 4.",p:[
+[5,"Brahmagupta’s ideas did not stay in India. In the eighth century, the new capital of the caliphate, Baghdad, became a centre of learning. According to the traditional account, Indian astronomical works were brought there and translated into Arabic. Over the following centuries, scholars in Baghdad and beyond gathered knowledge from India, Greece and Persia and added their own."],
+[5,"One of them, al-Khwarizmi, wrote around the year 820 a famous book on solving equations. The word algebra comes from its title, al-jabr, which means something like “restoring.” The idea of restoring was to move a subtracted amount to the other side of the equation so that everything became positive again."],
+[5,"Here is a surprising detail. Al-Khwarizmi’s algebra avoided negative numbers altogether. He sorted equations into six types, so that every term was positive. It’s a reminder that using a tool and welcoming it are two very different things."],
+[5,"Later Arabic scholars went further. Mathematicians such as al-Karaji, around the year 1000, and al-Samaw’al, in the twelfth century, worked with expressions that included subtraction and stated rules for multiplying signed quantities. They also carried the Hindu-Arabic numerals, the very numerals you are using today, to the western Mediterranean. That route led to our next stop."],
+[6,"Now we reach Europe. In 1202 an Italian merchant’s son, Leonardo of Pisa, known as Fibonacci, published Liber Abaci, “The Book of Calculation.” He had learned the Hindu-Arabic numerals as a boy in North Africa, from Arab teachers, and his book taught European traders how to use them. In one of its problems, he found an answer that came out negative, and he interpreted it as a debt. It’s one of the earliest European uses of a negative number."],
+[6,"The merchants were ahead of the mathematicians. By the late fifteenth century, Italian trading cities used double-entry bookkeeping, with a column for what you owed and a column for what you were owed. It wasn’t negative numbers exactly, but it was the same idea, lived in practice. Luca Pacioli’s textbook of 1494 described the method for a wide audience."],
+[6,"Then algebra pushed the issue. In the sixteenth century, European mathematicians raced to solve cubic equations, and negative answers kept turning up. Michael Stifel called negative numbers “absurd.” Girolamo Cardano, whose Ars Magna of 1545 was a landmark of algebra, used negative solutions but called them “fictitious.” Rafael Bombelli, a few decades later, wrote out rules for working with them. In 1637 René Descartes called negative solutions “false roots.”"],
+[6,"Their discomfort had a reason. In Greek mathematics, a number was a length or an area, and you cannot have a length less than nothing. Mathematicians did not want to reason about things they couldn’t picture."],
+[6,"The picture came in the seventeenth century. Albert Girard suggested that a negative answer could simply mean the opposite direction. And in 1685 John Wallis described numbers as points on a line, with positives on one side of zero and negatives on the other. Five minus eight stopped being nonsense. It became a walk of eight steps to the left from five, landing on negative three."]]},
+{s:"Doubt, victory, and the road behind us",a:"Think about it: Fibonacci and Cardano both saw negative answers and weren’t sure they were allowed. If you were a sixteenth-century mathematician, what argument would convince you?",p:[
+[7,"You might think the number line settled it. It didn’t, at least not for everyone. In the 1600s, the French thinker Antoine Arnauld raised a puzzle. If negative one is smaller than one, then the ratio of one to negative one should be a small-to-large ratio, and negative one to one should be a large-to-small ratio. Yet multiplication rules said the two ratios are equal. How can a small-to-large ratio equal a large-to-small one? Respected mathematicians argued over such questions well into the eighteenth century."],
+[7,"In 1770 the great Swiss mathematician Leonhard Euler wrote a popular algebra textbook that explained negative numbers using debts. And in the nineteenth century, mathematicians gave negative numbers a fully logical foundation, building the integers carefully from the natural numbers. After roughly two thousand years of practical use and argument, the matter was closed."],
+[7,"That’s the real lesson. A number can be useful long before it is understood, and the people who doubt it are not fools. They’re asking what the idea really means."],
+[8,"Let’s look back along the road. In China, negative numbers were a tool for solving many equations at once. In India, they became numbers with names and rules. In the Islamic world, they were carried onward and combined with new algebra. In Europe, they met bookkeeping, algebra and the number line, and were finally accepted."],
+[8,"Today you meet them in temperatures below freezing, bank balances, depths below sea level, and the voltage of a battery. When negative numbers feel strange, remember that they felt strange to Cardano and Descartes too. The idea took the work of many cultures and more than a thousand years, and you are inheriting it."]]}
+];
+var S=[].slice.call(document.querySelectorAll('.s')),cap=document.getElementById('cap'),pp=document.getElementById('pp'),dots=document.getElementById('dots'),st=document.getElementById('start'),en=document.getElementById('end'),menu=document.getElementById('menu');
+var c=0,k=0,playing=false,tok=0,tm;
+function mk(id,cls,n){var e=document.getElementById(id);for(var j=0;j<n;j++){var d=document.createElement('div');d.className='rod '+cls+(j<5?' x':'');e.appendChild(d)}}
+mk('reds','',8);mk('blks','k',5);
+(function(){var s='<line x1="30" y1="60" x2="570" y2="60" stroke="var(--ink)" stroke-width="3"/>';
+for(var n=-5;n<=5;n++){var x=300+n*50;s+='<line x1="'+x+'" y1="50" x2="'+x+'" y2="70" stroke="var(--ink)" stroke-width="2"/><text x="'+x+'" y="98" text-anchor="middle" font-size="18" fill="'+(n<0?'var(--acc)':'var(--ink)')+'">'+(n<0?'−'+(-n):n)+'</text>'}
+s+='<circle class="mk" cx="550" cy="38" r="12"/>';document.getElementById('nl').innerHTML=s})();
+C.forEach(function(ch,ci){var w=0;ch.p.forEach(function(p){w+=p[1].split(' ').length});var b=document.createElement('button');b.className='ch';b.textContent='Chapter '+(ci+1)+': '+ch.s+' (about '+Math.max(1,Math.round(w/135))+' min)';b.onclick=function(){load(ci)};menu.appendChild(b)});
+function halt(){tok++;clearTimeout(tm);try{speechSynthesis.cancel()}catch(e){}}
+function upd(){pp.textContent=playing?'⏸':'▶'}
+function load(ci){halt();c=ci;dots.innerHTML='';C[c].p.forEach(function(){dots.appendChild(document.createElement('i'))});st.style.display='none';en.style.display='none';S.forEach(function(s){s.classList.remove('on')});playing=true;upd();go(0)}
+function go(n){k=n;var P=C[c].p[n];S.forEach(function(s,j){s.classList.toggle('on',j===P[0])});[].forEach.call(dots.children,function(d,j){d.classList.toggle('on',j===n)});cap.textContent=P[1];cap.scrollTop=0;if(playing)speak()}
+function speak(){var my=++tok;clearTimeout(tm);try{speechSynthesis.cancel()}catch(e){}
+var t=C[c].p[k][1],done=function(){if(my!==tok||!playing)return;if(k<C[c].p.length-1)go(k+1);else finish()};
+if('speechSynthesis' in window){var u=new SpeechSynthesisUtterance(t);u.lang='en-GB';u.rate=.92;u.onend=done;speechSynthesis.speak(u)}
+else tm=setTimeout(done,t.split(' ').length*400+1500)}
+function finish(){playing=false;halt();upd();var last=c>=C.length-1;
+en.innerHTML='<h2>Chapter '+(c+1)+' complete</h2><p class="sub">'+C[c].a+'</p>'+(last?'':'<button class="ch" id="nx">Next chapter ▶</button>')+'<button class="ch" id="rp">Replay this chapter</button><button class="ch" id="bk">All chapters</button>';
+en.style.display='flex';if(!last)document.getElementById('nx').onclick=function(){load(c+1)};
+document.getElementById('rp').onclick=function(){load(c)};document.getElementById('bk').onclick=toMenu}
+function toMenu(){playing=false;halt();upd();en.style.display='none';st.style.display='flex'}
+pp.onclick=function(){if(en.style.display==='flex')return;if(playing){playing=false;halt()}else{playing=true;speak()}upd()};
+document.getElementById('next').onclick=function(){if(k<C[c].p.length-1)go(k+1);else finish()};
+document.getElementById('prev').onclick=function(){if(k>0)go(k-1)};
+document.getElementById('mn').onclick=toMenu;
+upd();
+</script>
+</body>
+</html>
