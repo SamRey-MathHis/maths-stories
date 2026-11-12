@@ -4,114 +4,52 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stories of Mathematics</title>
+<meta name="description" content="Learn school maths through the stories of the people and cultures who discovered it.">
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#efe3c4; --card:#f8efd8; --ink:#2b1d12; --muted:#6b5a40;
-  --acc:#7a1f22; --line:#c9b48a; --soon:#e6dabb;
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#1f1912; --card:#2c2318; --ink:#eadcb8; --muted:#b4a27e;
-    --acc:#e0806e; --line:#4d3f2c; --soon:#261f16; color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#1f1912; --card:#2c2318; --ink:#eadcb8; --muted:#b4a27e;
-  --acc:#e0806e; --line:#4d3f2c; --soon:#261f16; color-scheme:dark;
-}
-*{box-sizing:border-box}
-body{
-  margin:0; background:var(--bg); color:var(--ink);
-  font-family:"IM Fell English",Georgia,serif; line-height:1.5;
-}
-header{
-  text-align:center; padding:56px 16px 32px;
-  border-bottom:4px double var(--acc);
-}
-header h1{font-weight:400; font-size:clamp(34px,6vw,58px); margin:0 0 8px; line-height:1.1}
-header p{font-style:italic; font-size:clamp(16px,2.4vw,21px); margin:0 auto; max-width:36em; color:var(--muted)}
-main{max-width:1080px; margin:0 auto; padding:32px 16px 64px}
-h2{font-weight:400; font-size:clamp(24px,3.5vw,32px); margin:32px 0 6px}
-.section-note{margin:0 0 18px; color:var(--muted); font-style:italic}
-.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:16px}
-.card{
-  display:flex; flex-direction:column; gap:6px;
-  background:var(--card); border:1px solid var(--line); border-radius:10px;
-  padding:18px 20px; color:inherit; text-decoration:none; min-height:150px;
-}
-a.card{border:2px solid var(--acc); transition:transform .15s, box-shadow .15s}
-a.card:hover, a.card:focus-visible{transform:translateY(-3px); box-shadow:0 6px 18px rgba(0,0,0,.18); outline:none}
-.card .num{font-size:14px; color:var(--muted)}
-.card h3{font-weight:400; font-size:23px; margin:0; line-height:1.2}
-.card p{margin:0; font-size:16px; color:var(--muted); flex:1}
-.tag{align-self:flex-start; font-size:14px; padding:2px 10px; border-radius:999px; border:1px solid var(--line); color:var(--muted)}
-a.card .tag{background:var(--acc); border-color:var(--acc); color:var(--card)}
-.card.soon{background:var(--soon); opacity:.85}
-footer{text-align:center; color:var(--muted); font-size:15px; padding:0 16px 40px}
-</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
-<header>
+<body data-page="home">
+<header id="site-header"></header>
+
+<section class="page-hero">
   <h1>Stories of Mathematics</h1>
-  <p>Every idea in maths began as a problem someone needed to solve. Choose a topic to hear how people across the world worked it out.</p>
-</header>
+  <p>Every idea in maths began as a problem someone needed to solve. Hear how people across the world worked it out, and discover why the maths you learn today exists.</p>
+  <div class="btn-row">
+    <a class="btn primary" href="stories.html">Browse all stories</a>
+    <a class="btn ghost" href="about.html">About the project</a>
+  </div>
+</section>
 
 <main>
-  <h2>Primary school</h2>
-  <p class="section-note">Counting, place value, fractions and the first big ideas.</p>
-  <div class="grid" id="primary"></div>
+  <h2>Featured story</h2>
+  <div class="feature">
+    <div>
+      <h3>Negative Numbers: The Number That Wasn't Supposed to Exist</h3>
+      <p>For centuries, many mathematicians refused to believe numbers less than zero were real. Travel from Chinese counting rods to Indian astronomers, the scholars of Baghdad and the merchants of Europe to see how negative numbers finally won their place.</p>
+      <p class="section-note">Four chapters &middot; about 15 minutes &middot; narrated</p>
+      <a class="btn primary" href="Negative%20Numbers_%20A%20Journey%20in%20Four%20Chapters.html">Start the journey &rarr;</a>
+    </div>
+    <div class="big" aria-hidden="true">&minus;1</div>
+  </div>
 
-  <h2>Middle school</h2>
-  <p class="section-note">Negative numbers, primes, algebra, geometry and more.</p>
-  <div class="grid" id="middle"></div>
+  <h2>How every story works</h2>
+  <p class="section-note">Each story follows the same four steps.</p>
+  <div class="grid">
+    <div class="card"><span class="icon">?</span><h3>The problem</h3><p>It starts with the real problem that people needed to solve.</p></div>
+    <div class="card"><span class="icon">&there4;</span><h3>The reasoning</h3><p>See how people thought about the problem and found a way through.</p></div>
+    <div class="card"><span class="icon">&#9998;</span><h3>The story</h3><p>Told as a narrated journey with illustrated slides.</p></div>
+    <div class="card"><span class="icon">&#9737;</span><h3>The people</h3><p>Meet the discoverers and cultures behind the idea, then try it yourself.</p></div>
+  </div>
+
+  <h2>Find a story</h2>
+  <div class="grid">
+    <a class="card" href="stories.html#primary"><h3>Primary school</h3><p>Counting, zero, fractions, odd and even numbers and more.</p><span class="tag">See stories &rarr;</span></a>
+    <a class="card" href="stories.html#middle"><h3>Middle school</h3><p>Negative numbers, primes, algebra, Pythagoras and more.</p><span class="tag">See stories &rarr;</span></a>
+    <a class="card" href="teachers.html"><h3>Teaching with stories</h3><p>Ideas for using these stories in the classroom.</p><span class="tag">For teachers &rarr;</span></a>
+  </div>
 </main>
 
-<footer>Stories play with narration in your browser. Turn your sound on.</footer>
-
-<script>
-/*
-  HOW TO ADD A NEW STORY
-  1. Put the story's HTML file in this folder.
-  2. Find its topic below and set  file: "Your File Name.html"
-  Topics without a file show as "Coming soon".
-*/
-const topics = [
-  {level:"primary", title:"Counting and Number", blurb:"Tally sticks, knotted strings and the first numbers."},
-  {level:"primary", title:"Zero and Place Value", blurb:"How 'nothing' became one of the greatest inventions."},
-  {level:"primary", title:"Hindu-Arabic Numerals", blurb:"The journey of 0 to 9 from India to the whole world."},
-  {level:"primary", title:"Fractions", blurb:"Egyptian scribes sharing bread among workers."},
-  {level:"primary", title:"Odd and Even Numbers", blurb:"The mystery of the numbers that pair up."},
-  {level:"primary", title:"Divisibility Rules", blurb:"The mathematical tricks of ancient scholars."},
-  {level:"primary", title:"Decimals", blurb:"Tenths and hundredths from China to Stevin."},
-  {level:"primary", title:"Measurement and the Metric System", blurb:"From cubits and feet to the metre."},
-
-  {level:"middle", title:"Negative Numbers", blurb:"The number that wasn't supposed to exist: a journey in four chapters.",
-   file:"Negative Numbers_ A Journey in Four Chapters.html"},
-  {level:"middle", title:"HCF and LCM", blurb:"Sharing, packing and the cycles of the calendar."},
-  {level:"middle", title:"Prime Numbers", blurb:"The building blocks every number is made from."},
-  {level:"middle", title:"Origins of Geometry", blurb:"Measuring fields after the Nile floods."},
-  {level:"middle", title:"Pythagoras' Theorem", blurb:"Right angles known long before Pythagoras."},
-  {level:"middle", title:"Pi", blurb:"The endless chase to measure a circle."},
-  {level:"middle", title:"Algebra", blurb:"Al-Khwarizmi and the art of restoring and balancing."},
-  {level:"middle", title:"Algebraic Symbols", blurb:"How x, + and = were invented."},
-  {level:"middle", title:"Coordinate Geometry", blurb:"Descartes joins numbers and shapes."},
-  {level:"middle", title:"Proof and Euclid's Axioms", blurb:"Why mathematicians demand proof."},
-  {level:"middle", title:"Probability", blurb:"A gambling puzzle that started a new mathematics."}
-];
-
-topics.forEach((t, i) => {
-  const el = document.createElement(t.file ? "a" : "div");
-  el.className = "card" + (t.file ? "" : " soon");
-  if (t.file) el.href = encodeURI(t.file);
-  el.innerHTML =
-    '<span class="num">Story ' + (i + 1) + '</span>' +
-    '<h3></h3><p></p>' +
-    '<span class="tag">' + (t.file ? "Open story &rarr;" : "Coming soon") + '</span>';
-  el.querySelector("h3").textContent = t.title;
-  el.querySelector("p").textContent = t.blurb;
-  document.getElementById(t.level).appendChild(el);
-});
-</script>
+<footer id="site-footer"></footer>
+<script src="assets/site.js"></script>
 </body>
 </html>

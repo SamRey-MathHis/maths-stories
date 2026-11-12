@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stories | Stories of Mathematics</title>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-page="stories">
+<header id="site-header"></header>
+
+<section class="page-hero">
+  <h1>Stories</h1>
+  <p>Choose a topic to hear how it was discovered. Stories play with narration, so turn your sound on.</p>
+</section>
+
+<main>
+  <div class="filters" role="group" aria-label="Filter stories">
+    <button data-filter="all" aria-pressed="true">All</button>
+    <button data-filter="ready" aria-pressed="false">Ready to watch</button>
+  </div>
+
+  <h2 id="primary">Primary school</h2>
+  <p class="section-note">Counting, place value, fractions and the first big ideas.</p>
+  <div class="grid" id="grid-primary"></div>
+
+  <h2 id="middle">Middle school</h2>
+  <p class="section-note">Negative numbers, primes, algebra, geometry and more.</p>
+  <div class="grid" id="grid-middle"></div>
+</main>
+
+<footer id="site-footer"></footer>
+<script src="assets/site.js"></script>
+<script src="assets/topics.js"></script>
+<script>
+  function draw(onlyReady) {
+    ["primary", "middle"].forEach(level => {
+      const list = TOPICS.filter(t => t.level === level && (!onlyReady || t.file));
+      renderTopics(document.getElementById("grid-" + level), list);
+    });
+  }
+  document.querySelectorAll(".filters button").forEach(b => {
+    b.addEventListener("click", () => {
+      document.querySelectorAll(".filters button").forEach(x => x.setAttribute("aria-pressed", x === b));
+      draw(b.dataset.filter === "ready");
+    });
+  });
+  draw(false);
+</script>
+</body>
+</html>
